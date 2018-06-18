@@ -7,6 +7,7 @@ comments: true
 ## Executive Summary
 My motivation for writing a blog is explained, and the choice for using Jekyll
 and Github Pages is justified.
+<!--more-->
 
 
 ## Why Blogging?

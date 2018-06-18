@@ -13,7 +13,8 @@ obtaining higher order derivatives is illustrated.
 
 The intended audience is for anyone interested in implementing thermodynamic
 calculations from scratch, and is adventurous enough to try out the latest
-tools developed by computer scientists.
+tools developed by computer scientists. 
+<!--more-->
 
 
 Contents:
