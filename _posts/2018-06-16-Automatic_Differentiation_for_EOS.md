@@ -402,9 +402,9 @@ computed from:
 
 $$
 \begin{align*}
-  \frac{\partial P}{\partial T^2} &= -\frac{3 ~ a}{4 ~ T^{\frac{5}{2}} ~ v ~ (v + b)} \\
-  \frac{\partial P}{\partial T \partial v} &= -\frac{R}{(v - b)^2} - \frac{a ~ (2 ~ v + b)}{2 ~ T^{\frac{3}{2}} ~ v^2 ~ (v + b)^2} \\
-  \frac{\partial P}{\partial v^2} &= -\frac{2 ~ R ~ T}{(v - b)^3} - \frac{2 ~ a ~ (b^2 + 3 ~ b ~ v + 3 ~ v^2)}{\sqrt{T} ~ v^3 ~ (v + b)^3}
+  \frac{\partial^2 P}{\partial T^2} &= -\frac{3 ~ a}{4 ~ T^{\frac{5}{2}} ~ v ~ (v + b)} \\
+  \frac{\partial^2 P}{\partial T \partial v} &= -\frac{R}{(v - b)^2} - \frac{a ~ (2 ~ v + b)}{2 ~ T^{\frac{3}{2}} ~ v^2 ~ (v + b)^2} \\
+  \frac{\partial^2 P}{\partial v^2} &= -\frac{2 ~ R ~ T}{(v - b)^3} - \frac{2 ~ a ~ (b^2 + 3 ~ b ~ v + 3 ~ v^2)}{\sqrt{T} ~ v^3 ~ (v + b)^3}
 \end{align*}
 $$
 
