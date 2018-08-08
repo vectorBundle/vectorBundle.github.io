@@ -134,3 +134,83 @@ $$
            \frac{\partial(v, w)}{\partial(x, y)} }
 \end{equation*}
 $$
+
+Applied to the first order partial derivative, we obtain:
+
+$$
+\begin{align*}
+  \frac{\partial(v, P)}{\partial(v, T)} &= \begin{vmatrix}
+    \left(\frac{\partial v}{\partial v}\right)_T & \left(\frac{\partial v}{\partial T}\right)_v \\
+    \left(\frac{\partial P}{\partial v}\right)_T & \left(\frac{\partial P}{\partial T}\right)_v
+  \end{vmatrix} = \begin{vmatrix}
+    1 & 0 \\
+    \left(\frac{\partial P}{\partial v}\right)_T & \left(\frac{\partial P}{\partial T}\right)_v
+  \end{vmatrix} = \left(\frac{\partial P}{\partial T}\right)_v \\
+
+  \frac{\partial(T, P)}{\partial(v, T)} &= \begin{vmatrix}
+    \left(\frac{\partial T}{\partial v}\right)_T & \left(\frac{\partial T}{\partial T}\right)_v \\
+    \left(\frac{\partial P}{\partial v}\right)_T & \left(\frac{\partial P}{\partial T}\right)_v
+  \end{vmatrix} = \begin{vmatrix}
+    0 & 1 \\
+    \left(\frac{\partial P}{\partial v}\right)_T & \left(\frac{\partial P}{\partial T}\right)_v
+  \end{vmatrix} = - \left(\frac{\partial P}{\partial v}\right)_T \\
+
+  \left(\frac{\partial v}{\partial T}\right)_P &=
+    \frac{ \frac{\partial(v, P)}{\partial(v, T)} }{
+           \frac{\partial(T, P)}{\partial(v, T)} } = 
+    - \frac{ \left( \frac{\partial P}{\partial T} \right)_v }{ 
+             \left( \frac{\partial P}{\partial v} \right)_T }
+\end{align*}
+$$
+
+which is consistent with what we have obtained applying the triple product
+rule.
+
+
+## Second Order Partial Derivative
+
+Here comes the fun part, where we wish to convert $ \left( \frac{\partial^2 v}{\partial T^2} \right)_P $
+into an expression of partial derivatives of $P$ with respect to $T, v$.
+We can start by leverage what we have done to the first order partial
+derivative, letting
+
+$$
+\begin{equation*}
+  f = \left(\frac{\partial v}{\partial T}\right)_P = 
+    - \frac{ \left( \frac{\partial P}{\partial T} \right)_v }{ 
+             \left( \frac{\partial P}{\partial v} \right)_T }
+\end{equation*}
+$$
+
+However we can't apply the triple product rule here, since $f$ itself is an
+expression of $P$.
+Instead we have to use the two-Jacobian rule.
+
+$$
+\begin{align*}
+  \frac{\partial(f, P)}{\partial(v, T)} &= \begin{vmatrix}
+    \left(\frac{\partial f}{\partial v}\right)_T & \left(\frac{\partial f}{\partial T}\right)_v \\
+    \left(\frac{\partial P}{\partial v}\right)_T & \left(\frac{\partial P}{\partial T}\right)_v
+  \end{vmatrix} =
+  \left(\frac{\partial f}{\partial v}\right)_T ~ \left(\frac{\partial P}{\partial T}\right)_v -
+  \left(\frac{\partial P}{\partial v}\right)_T ~ \left(\frac{\partial f}{\partial T}\right)_v \\
+
+  \frac{\partial(T, P)}{\partial(v, T)} &= \begin{vmatrix}
+    \left(\frac{\partial T}{\partial v}\right)_T & \left(\frac{\partial T}{\partial T}\right)_v \\
+    \left(\frac{\partial P}{\partial v}\right)_T & \left(\frac{\partial P}{\partial T}\right)_v
+  \end{vmatrix} = \begin{vmatrix}
+    0 & 1 \\
+    \left(\frac{\partial P}{\partial v}\right)_T & \left(\frac{\partial P}{\partial T}\right)_v
+  \end{vmatrix} = - \left(\frac{\partial P}{\partial v}\right)_T \\
+
+  \left( \frac{\partial^2 v}{\partial T^2} \right)_P &= \left( \frac{\partial f}{\partial T} \right)_P =
+  \frac{ \frac{\partial(f, P)}{\partial(v, T)} }{
+         \frac{\partial(T, P)}{\partial(v, T)} } \\
+  &= \frac{
+      \left(\frac{\partial f}{\partial v}\right)_T ~ \left(\frac{\partial P}{\partial T}\right)_v -
+      \left(\frac{\partial P}{\partial v}\right)_T ~ \left(\frac{\partial f}{\partial T}\right)_v \\
+  }{  - \left(\frac{\partial P}{\partial v}\right)_T } \\
+  &= \left(\frac{\partial f}{\partial T}\right)_v + \left(\frac{\partial f}{\partial v}\right)_T ~ f
+
+\end{align*}
+$$
