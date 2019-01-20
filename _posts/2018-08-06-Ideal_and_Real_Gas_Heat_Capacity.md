@@ -10,8 +10,6 @@ An algebraic equation relating the real gas heat capacity and ideal gas heat
 capacity is derived.
 The equation is then re-parameterized into a form suitable for working with
 pressure explicit equation of states.
-Demonstration of correctiveness using the Peng-Robinson equation of state is
-given with the aid of Mathematica.
 <!--more-->
 
 
@@ -185,6 +183,7 @@ $$
 However we can't apply the triple product rule here, since $f$ itself is an
 expression of $P$.
 Instead we have to use the two-Jacobian rule.
+First we compute the ingredients.
 
 $$
 \begin{align*}
@@ -201,8 +200,14 @@ $$
   \end{vmatrix} = \begin{vmatrix}
     0 & 1 \\
     \left(\frac{\partial P}{\partial v}\right)_T & \left(\frac{\partial P}{\partial T}\right)_v
-  \end{vmatrix} = - \left(\frac{\partial P}{\partial v}\right)_T \\
+  \end{vmatrix} = - \left(\frac{\partial P}{\partial v}\right)_T
+\end{align*}
+$$
 
+Now we can put together for evaluating the second derivatives.
+
+$$
+\begin{align*}
   \left( \frac{\partial^2 v}{\partial T^2} \right)_P &= \left( \frac{\partial f}{\partial T} \right)_P =
   \frac{ \frac{\partial(f, P)}{\partial(v, T)} }{
          \frac{\partial(T, P)}{\partial(v, T)} } \\
@@ -210,7 +215,13 @@ $$
       \left(\frac{\partial f}{\partial v}\right)_T ~ \left(\frac{\partial P}{\partial T}\right)_v -
       \left(\frac{\partial P}{\partial v}\right)_T ~ \left(\frac{\partial f}{\partial T}\right)_v \\
   }{  - \left(\frac{\partial P}{\partial v}\right)_T } \\
-  &= \left(\frac{\partial f}{\partial T}\right)_v + \left(\frac{\partial f}{\partial v}\right)_T ~ f
+  &= \left(\frac{\partial f}{\partial v}\right)_T ~ f + \left(\frac{\partial f}{\partial T}\right)_v 
 
 \end{align*}
 $$
+
+Note that the expression is expressed in terms of $f$, which is the ratio
+of the first order partial derivatives as defined above.
+The task has now been simplified; only needs to work out the derivatives with
+respect to $f$ in the pressure explicit form.
+This will be tedious, laborious, but conceptually straight forward.
